@@ -1,0 +1,152 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //List<T> class
+            //System.Collections.Generic
+            //T->object tüütndedir
+
+            List<int> mylist = new List<int>();
+
+            mylist.Add(52);
+            mylist.Add(85);
+            mylist.Add(598);
+            mylist.Add(5741);
+
+            List<string> myRenk = new List<string>();
+
+            myRenk.Add("red");
+            myRenk.Add("blue");
+            myRenk.Add("yellow");
+            myRenk.Add("purple");
+
+            //Count
+            Console.WriteLine(mylist.Count());
+            Console.WriteLine(myRenk.Count());
+
+
+            //forach ile elemalar erişim
+            foreach (var item in mylist)
+            {
+                Console.WriteLine(item);
+            }
+            foreach (var item in myRenk)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("*********************");
+            Console.WriteLine("*********************");
+            Console.WriteLine("*********************");
+            Console.WriteLine("*********************");
+            Console.WriteLine("*********************");
+            Console.WriteLine("*********************");
+            /*
+            //listeden eleman çıkarnma
+            mylist.Remove(52);
+            myRenk.Remove("yellow");
+
+            //indekse göre eleman çıkarma
+            mylist.RemoveAt(2);
+            myRenk.RemoveAt(2);
+
+            */
+
+            /*foreach (var item in mylist)
+            {
+                Console.WriteLine(item);
+            }
+            foreach (var item in myRenk)
+            {
+                Console.WriteLine(item);
+            }*/
+
+
+
+
+            //liste içerisinde arama
+            if (mylist.Contains(5741))
+            {
+                Console.WriteLine("5741 var");
+            }
+
+            //eleman indeksine erişim
+            Console.WriteLine(myRenk.BinarySearch("purple"));
+
+            //Diziyi Listeye Çevirme
+            string[] aa = { "aaaaa", "bbbbb", "cccccc" };
+            List<string> aaa = new List<string>(aa);
+            foreach (var item in aaa)
+            {
+                Console.WriteLine(item);
+            }
+            //list temizleme
+            aaa.Clear();
+            foreach (var item in aaa)
+            {
+                Console.WriteLine(item);
+            }
+
+            //list içerisinde nesne tutmak
+
+
+            List<kullanıcılar> kullanıcıListesi = new List<kullanıcılar>();
+
+            kullanıcılar kullanıcı1= new kullanıcılar();
+            kullanıcılar kullanıcı2 = new kullanıcılar();
+
+
+            kullanıcı1.Isim = "asdasdasdasdad";
+            kullanıcı1.Soyisim = "sdfsdfsdfdsjhfkguılyıoulkjöbmvhmvhj";
+            kullanıcı1.Yas = 78;
+
+
+            kullanıcı2.Isim = "ghfjkfgjhkfhjkghjklöghkjlöghjmögjhjö";
+            kullanıcı2.Soyisim = "tttttttttttttttttt";
+            kullanıcı2.Yas = 963;
+
+            kullanıcıListesi.Add(kullanıcı1);
+            kullanıcıListesi.Add(kullanıcı2);
+
+            foreach (var item in kullanıcıListesi)
+            {
+                Console.WriteLine(item.Isim);
+            }
+
+
+
+
+            Console.ReadKey();
+        }
+
+        class kullanıcılar
+        {
+            private string isim;
+            private string soyisim;
+            private int yas;
+
+
+            public string Isim { get => isim; set => isim=value; }
+            public string Soyisim { get => soyisim; set => soyisim = value; }
+            public int Yas { get => yas; set => yas = value; }
+
+
+
+
+        }
+
+
+    }
+
+
+
+    
+}
+
